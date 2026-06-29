@@ -1,0 +1,27 @@
+{
+  "campusCode": "CAM-CHA-15",
+  "apiBasePath": "/api/v1/cha/",
+
+  "theme": {
+    "primaryColor": "#1A237E",
+    "secondaryColor": "#E040FB"
+  },
+
+  "constraints": {
+    "voiceMessageMaxDurationSec": 30
+  },
+
+  "features": {
+    "authentication": true,
+    "realTimeMessaging": true,
+    "locationServices": true,
+    "pushNotifications": true,
+    "offlineSupport": true,
+    "apiIntegration": true
+  },
+
+  "security": {
+    "enforceConfigValidation": true,
+    "crashOnMismatch": true
+  }
+}

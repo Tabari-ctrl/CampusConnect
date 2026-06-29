@@ -1,9 +1,10 @@
 export const colors = {
-  primary: '#2196f3',
+  primary: '#1A237E',
+  seconadry: '#E040FB',
   border: '#565656',
   red: '#EF5350',
   pink: '#EC407A',
-  teal: '#26A69A',
+  teal: '#E040FB',
   grey: '#BDBDBD',
 };
 

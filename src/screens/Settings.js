@@ -90,14 +90,14 @@ const Settings = ({ navigation }) => {
             accessibilityHint="Opens the system share sheet"
           />
 
-          <Cell
+          {/* <Cell
             title="Open source project"
             subtitle="View the repository and release history"
             icon="logo-github"
             tintColor="#111827"
             onPress={handleOpenGithub}
             accessibilityHint="Opens the GitHub repository in your browser"
-          />
+          /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

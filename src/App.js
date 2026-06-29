@@ -9,6 +9,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Chat from './screens/Chat';
+import SOS from './screens/SOS';
+import Attendance from './screens/Attendance';
+import LostFound from './screens/LostFound';
 import Help from './screens/Help';
 import Chats from './screens/Chats';
 import Login from './screens/Login';
@@ -40,19 +43,54 @@ const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName = route.name === 'Chats' ? 'chatbubbles' : 'settings';
-          iconName += focused ? '' : '-outline';
+          let iconName;
+
+          switch (route.name) {
+            case 'Chats':
+              iconName = focused ? 'chatbubbles' : 'chatbubbles-outline';
+              break;
+
+            case 'SOS':
+              iconName = focused ? 'warning' : 'warning-outline';
+              break;
+
+            case 'Attendance':
+              iconName = focused ? 'checkbox' : 'checkbox-outline';
+              break;
+
+            case 'Lost & Found':
+              iconName = focused ? 'search' : 'search-outline';
+              break;
+
+            case 'Settings':
+              iconName = focused ? 'settings' : 'settings-outline';
+              break;
+
+            default:
+              iconName = 'ellipse-outline';
+          }
+
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarAccessibilityLabel: route.name,
+
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: 'gray',
         headerShown: true,
       })}
     >
-      <Tab.Screen name="Chats" options={{ tabBarBadge: unreadCount > 0 ? unreadCount : null }}>
+      <Tab.Screen
+        name="Chats"
+        options={{ tabBarBadge: unreadCount > 0 ? unreadCount : null }}
+      >
         {() => <Chats />}
       </Tab.Screen>
+
+      <Tab.Screen name="SOS" component={SOS} />
+
+      <Tab.Screen name="Attendance" component={Attendance} />
+
+      <Tab.Screen name="Lost & Found" component={LostFound} />
+
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );

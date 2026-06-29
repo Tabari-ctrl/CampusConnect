@@ -65,7 +65,15 @@ const Users = () => {
   const handleNewGroup = useCallback(() => {
     navigation.navigate('Group');
   }, [navigation]);
+  const handleSubtitle = useCallback(
+    (user) => getUserStatusText(user.data().email, auth?.currentUser?.email),
+    []
+  );
 
+  const handleName = useCallback(
+    (user) => getDisplayName(user.data(), auth?.currentUser?.email),
+    []
+  );
   const handleNavigate = useCallback(
     async (user) => {
       let navigationChatID = '';
@@ -90,7 +98,7 @@ const Users = () => {
         }
 
         if (auth?.currentUser?.email === selectedUser.email) {
-          navigationChatID = '';
+          navigationChatID = '';  
         }
       });
 
@@ -114,15 +122,7 @@ const Users = () => {
     [existingChats, handleName, navigation]
   );
 
-  const handleSubtitle = useCallback(
-    (user) => getUserStatusText(user.data().email, auth?.currentUser?.email),
-    []
-  );
-
-  const handleName = useCallback(
-    (user) => getDisplayName(user.data(), auth?.currentUser?.email),
-    []
-  );
+  
 
   const renderUser = useCallback(
     ({ item }) => (

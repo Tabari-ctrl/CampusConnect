@@ -53,10 +53,7 @@ const ChatMenu = ({ chatName, chatId }) => {
         testID="chat-menu-trigger"
       >
         <View
-          accessible
-          accessibilityHint="Opens chat actions"
           accessibilityLabel="More chat actions"
-          accessibilityRole="button"
           style={styles.menuButton}
         >
           <Ionicons name="ellipsis-vertical" size={24} color="#373737" style={styles.menuIcon} />
