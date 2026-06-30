@@ -1,0 +1,20 @@
+GROUP_ASSIGNMENT
+
+Group Number: 20
+
+Project Title:
+Real-Time Chat Application Using React Native and Firebase
+
+Group Members:
+- ALAMIN UMAR TABARI
+- MUSTAPHA RIDWAN
+- AHMAD ALI ALHAJI
+
+Declaration:
+This project was developed by Group 20 as part of our software engineering coursework. The application demonstrates real-time messaging, media sharing, offline synchronization, read receipts, and voice note functionality using React Native (Expo) and Firebase.
+
+Academic Session:
+2025/2026
+
+Status:
+Completed
